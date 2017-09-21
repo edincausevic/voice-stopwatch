@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <title>Voice Stopwatch</title>
+    </head>
+    
+    <body>
+        <div class="stopwatch">
+            <div class="sw-container">
+<!--  HEADER  -->            
+                <header>
+                    <img src="img/logo.png" class="logo">
+                    <img src="img/logo-small.png" class="logo-small">
+                    <img src="img/logo-middle.png" class="logo-middle">
+                    <div class="logo-title">
+                        <h1>Voice Stopwatch</h1>
+                        <h2>Control it with voice</h2>
+                    </div>
+                    <h4  class="menu"><i class="fa fa-cog menu-icone" id="controls"></i></h4>
+                </header>           
+<!--  COUNTER  -->
+                <div class="counter">
+               <!-- <span id="sw_h">00</span>: -->
+                    <span id="sw_m">00</span>:
+                    <span id="sw_s">00</span>:
+                    <span id="sw_ms">00</span>
+                </div>
+            </div>
+<!--  MENU  -->            
+            <div class="menu-container">
+                <div class="play-btn btn" id="sw_start">
+                    <h3><span class="say">Say</span><i class="fa fa-play"></i>Fittness start</h3>
+                </div>
+                <div class="stop-btn btn" id="sw_stop">
+                    <h3><span class="say">Say</span><i class="fa fa-stop"></i>Fittness stop</h3>
+                </div>
+                <div class="reset-btn btn" id="sw_reset">
+                    <h3><span class="say">Say</span><i class="fa fa-clock-o"></i>Fittness reset</h3>
+                </div>
+            </div>
+<!--  SOUND-BEEP  -->            
+            <audio id="beep-sound">
+                <source src="sound/beep-07.mp3" id="beep-sound-07"></source>
+            </audio>
+            <audio id="tempo" loop>
+                <source src="sound/tempo.wav" id="tempo-s"></source>
+            </audio>
+        </div>
+<!--  CONTROLS MENU  -->     
+        <div class="control-back">
+            <div class="controls-menu">
+                <div class="control-title">
+                    <h2><i class="fa fa-cog"></i>Controls<i class="fa fa-times menu-btn" id="hide"></i></h2>
+                </div>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>Button control<i class="fa fa-toggle-on menu-btn" id="btn-control"></i></h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>App size<i class="fa fa-toggle-on menu-btn" id="app-size"></i></h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>Sound<i class="fa fa-toggle-on menu-btn" id="app-sound"></i></h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>Tempo<i class="fa fa-toggle-on menu-btn" id="tempo-sound"></i></h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>Shortcuts<i class="fa fa-keyboard-o"></i></h2>
+                        <span class="say"><strong style="font-style: normal">Space</strong> - Start/Stop</span>
+                        <span class="say"><strong style="font-style: normal">Enter</strong> - Reset</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="control-btn">
+                        <h2>Voice suport<i class="fa fa-chrome"></i></h2>
+                        <span class="say">Google Chrome is the only browser that supports voice control (for now), so you'll not be able to use voice to to control Stopwatch in other browsers.</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <span class="copyright"><i class="fa fa-copyright"></i> Copyright 2016</span>
+                </div>
+            </div>
+        </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.1.0/annyang.min.js"></script>  
+    <script src="js/stopwatch.js"></script>
+    <script src="js/respond.js"></script>
+    </body>
+</html>

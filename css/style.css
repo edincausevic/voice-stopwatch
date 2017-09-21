@@ -1,0 +1,400 @@
+/* --------------------------------------------- */
+/* BASIC SETUP                                   */
+/* --------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(0, 0, 0, 0.69) 0%,rgba(0, 0, 0, 0.7) 100%);
+}
+
+
+h1 {
+    font-size: 157%;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+h2, h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 119%;
+    top: -2px;
+    display: block;
+}
+
+h3 {
+    font-size: 140%;
+}
+
+
+.stopwatch,
+.counter,
+.menu,
+.logo-title,
+.menu-container,
+.controls-menu
+{
+    -webkit-transition: all 1s ease-in-out;   
+    transition: all 1s ease-in-out;
+}
+
+
+
+
+
+/* --------------------------------------------- */
+/* STOPWATCH                                     */
+/* --------------------------------------------- */
+
+
+
+.stopwatch {
+    width: 970px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #dadada;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-shadow: 7px 7px 13px -4px rgba(0,0,0,0.75);
+}
+
+
+
+/*------- HEADER ---------*/
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: #353535;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+header:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.logo-title {
+    display: inline-block;
+    padding: 5px 1px; 
+}
+
+.logo {
+    padding-left: 10px;
+    margin-bottom: 2px;
+    
+}
+
+.logo-small {
+    display: none;
+}
+
+.logo-middle {
+    display: none;
+}
+
+.menu {
+    float: right;
+    font-size: 35px;
+    margin: 12px 11px 0 0;
+}
+
+.menu-icone {
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+.menu-icone:hover {
+    cursor: pointer;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+}
+
+
+
+/*---------- STOPWATCH ---------*/
+
+.sw-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 930%;
+    color: #353535;
+    -webkit-transition: all 1s ease-in-out;   
+    transition: all 1s ease-in-out;
+    cursor: default;
+}
+
+
+/*--------- MENU BUTTONS ---------*/
+
+
+.menu-container {
+    width: 100%;
+    height: 63px;
+    position: absolute;
+    bottom: 0;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.play-btn {
+    background: #e74c3c;
+    width: 34%;
+    border-bottom-left-radius: 8px;
+}
+
+.stop-btn {
+    background: #27ae60;
+    width: 32%;
+}
+
+.reset-btn {
+    background: #2980b9;
+    width: 34%;
+    border-bottom-right-radius: 8px;
+}
+
+.btn .fa {
+    padding-right: 10px;
+}
+
+.btn h3 {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.say {
+    text-transform: none;
+    font-style: italic;
+    padding-right: 10px;
+    font-family: serif;
+}
+
+.play-btn-js {
+    background-color: #353535;
+}
+
+
+
+/*--------- CONTROLS MENU ---------*/
+
+.control-back {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.controls-menu {
+    width: 350px;
+    padding: 2px;
+    background-color: #efefef;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.row {
+    padding: 20px 10px 13px 10px;
+    color: #353535;
+}
+
+hr {
+    border: 1px solid #e3e3e3;
+    width: 94%;
+    margin: 0 auto;
+}
+
+.control-title {
+    background-color: #353535;
+    padding: 13px 0 10px 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.control-title .fa {
+    padding-right: 10px;
+}
+
+.menu-btn {
+    float: right;
+    cursor: pointer;
+}
+
+
+
+
+
+.fa-chrome,
+.fa-keyboard-o{
+    float: right;
+}
+
+.copyright {
+    font-size: 12px;
+    float: right;
+}
+
+.row:last-child {
+    padding: 10px 10px 20px 10px;
+}
+
+
+
+
+/* --------------------------------------------- */
+/* RESPONSIVNES                                  */
+/* --------------------------------------------- */
+
+
+
+
+
+/* Small tablets to big tablet: from 786px - 1023px  */
+@media only screen and (max-width: 1023px) {
+    .stopwatch {
+        width: 100%;
+    }
+}
+
+/* Small phones to small tablets: from 653px - 822px  */
+@media only screen and (max-width: 822px) {
+    html { font-size: 13px;}
+    .counter {font-size: 1040%;}
+    .menu {margin-top: 7px;}
+    .btn h3 { padding-top: 22px;}
+    .logo{ display: none;}
+    .logo-middle {
+        display: inline-block;
+        margin-left: 5px;
+        margin-bottom: 2px;
+    }
+    
+}
+
+/* Small phones to small tablets: from 557px - 671px  */
+@media only screen and (max-width: 671px) {
+    html { font-size: 11px;}
+    h3 { padding-top: 24px;}
+    .menu-container {height: 56px;}
+    .menu { font-size: 30px;}
+    .logo-title {padding-left: 0px;}
+    .logo {display: none;}
+    .logo-middle {display: none;}
+    .logo-small {
+        display: inline-block;
+        margin-left: 7px;
+        margin-bottom: 2px;
+    }
+    
+}
+
+/* Small phones: from 387 - 557px  */
+@media only screen and (max-width: 557px) {
+    .counter {font-size: 850%;}
+    .btn h3 {padding-top: 13px;}
+}
+
+@media only screen and (max-width: 397px) {
+    .menu-container {height: 77px;}
+    .counter {font-size: 500%;}
+    .controls-menu { width:  100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
